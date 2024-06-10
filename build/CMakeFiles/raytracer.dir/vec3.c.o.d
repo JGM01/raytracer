@@ -1,5 +1,6 @@
-CMakeFiles/raytracer.dir/main.c.o: \
-  /Users/jacob/toy_projects/raytracer/main.c \
+CMakeFiles/raytracer.dir/vec3.c.o: \
+  /Users/jacob/toy_projects/raytracer/vec3.c \
+  /Users/jacob/toy_projects/raytracer/vec3.h \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/stdio.h \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/_stdio.h \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/sys/cdefs.h \
@@ -36,5 +37,4 @@ CMakeFiles/raytracer.dir/main.c.o: \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/sys/_types/_ssize_t.h \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/secure/_stdio.h \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/secure/_common.h \
-  /Users/jacob/toy_projects/raytracer/vec3.h \
-  /Users/jacob/toy_projects/raytracer/ray.h
+  /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/math.h

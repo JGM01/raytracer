@@ -4,4 +4,4 @@ project(raytracer VERSION 1.0
                   DESCRIPTION "C implementation of ray tracing in a weekend."
                   LANGUAGES C)
 
-add_executable(raytracer main.c)
+add_executable(raytracer main.c vec3.c vec3.h ray.c ray.h)

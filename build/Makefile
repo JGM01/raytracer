@@ -153,6 +153,54 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/main.c.s
 .PHONY : main.c.s
 
+ray.o: ray.c.o
+.PHONY : ray.o
+
+# target to build an object file
+ray.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/ray.c.o
+.PHONY : ray.c.o
+
+ray.i: ray.c.i
+.PHONY : ray.i
+
+# target to preprocess a source file
+ray.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/ray.c.i
+.PHONY : ray.c.i
+
+ray.s: ray.c.s
+.PHONY : ray.s
+
+# target to generate assembly for a file
+ray.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/ray.c.s
+.PHONY : ray.c.s
+
+vec3.o: vec3.c.o
+.PHONY : vec3.o
+
+# target to build an object file
+vec3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/vec3.c.o
+.PHONY : vec3.c.o
+
+vec3.i: vec3.c.i
+.PHONY : vec3.i
+
+# target to preprocess a source file
+vec3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/vec3.c.i
+.PHONY : vec3.c.i
+
+vec3.s: vec3.c.s
+.PHONY : vec3.s
+
+# target to generate assembly for a file
+vec3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/vec3.c.s
+.PHONY : vec3.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +213,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... ray.o"
+	@echo "... ray.i"
+	@echo "... ray.s"
+	@echo "... vec3.o"
+	@echo "... vec3.i"
+	@echo "... vec3.s"
 .PHONY : help
 
 
