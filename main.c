@@ -1,8 +1,28 @@
 #include <stdio.h>
+#include <stdbool.h>
+
 #include "vec3.h"
 #include "ray.h"
 
+typedef struct sphere {
+    loc3 center;
+    double radius;
+} sphere;
+
+bool hit_sphere(sphere *s,  ray *r) {
+    vec3 oc = vec_sub(&s->center, &r->orig);
+    double a = vec_dot(&r->dir, &r->dir);
+    double b = -2.0 * vec_dot(&r->dir, &oc);
+    double c = vec_dot(&oc, &oc) - (s->radius * s->radius);
+    double discriminant = b*b - 4*a*c;
+    return (discriminant >= 0);
+}
 color ray_color(ray *r) {
+    
+    if(hit_sphere(&(sphere) { {0,0,-1}, 0.5 }, r)) {
+        return (color) {1, 0, 0};
+    }
+
     vec3 unit_dir = vec_unit(&r->dir);
     
     double a = 0.5 * (vec_y(&unit_dir) + 1);
@@ -12,6 +32,7 @@ color ray_color(ray *r) {
 
     return vec_add(&c1, &c2);
 }
+
 
 int main() {
 
