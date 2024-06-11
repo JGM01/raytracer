@@ -1,3 +1,4 @@
 # Ray Tracer in a Weekend
 
-Currently rendering a blue-to-white gradient!
+Ray tracer current status:
+![image](image.ppm)
