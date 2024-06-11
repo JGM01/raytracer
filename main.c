@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -9,18 +10,32 @@ typedef struct sphere {
     double radius;
 } sphere;
 
-bool hit_sphere(sphere *s,  ray *r) {
+double hit_sphere(sphere *s,  ray *r) {
     vec3 oc = vec_sub(&s->center, &r->orig);
     double a = vec_dot(&r->dir, &r->dir);
     double b = -2.0 * vec_dot(&r->dir, &oc);
     double c = vec_dot(&oc, &oc) - (s->radius * s->radius);
     double discriminant = b*b - 4*a*c;
-    return (discriminant >= 0);
+    
+    if(discriminant < 0) {
+        return -1.0;
+    } else {
+        return (-b - sqrt(discriminant)) / (2.0*a);
+    }
+
 }
 color ray_color(ray *r) {
-    
-    if(hit_sphere(&(sphere) { {0,0,-1}, 0.5 }, r)) {
-        return (color) {1, 0, 0};
+    double t = hit_sphere(&(sphere) { {0,0,-1}, 0.5}, r);    
+    if(t > 0.0) {
+        loc3 ray_loc = ray_at(r, t);
+        vec3 normal = vec_sub(&ray_loc, &(vec3) {0,0,-1});
+        vec3 n = vec_unit(&normal);
+
+        double r = vec_x(&n);
+        double g = vec_y(&n);
+        double b = vec_z(&n);
+
+        return vec_muld(&(color) {r+1, g+1, b+1}, 0.5);
     }
 
     vec3 unit_dir = vec_unit(&r->dir);
