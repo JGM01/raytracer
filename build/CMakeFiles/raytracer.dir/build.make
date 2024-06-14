@@ -69,60 +69,60 @@ include CMakeFiles/raytracer.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/raytracer.dir/flags.make
 
-CMakeFiles/raytracer.dir/main.c.o: CMakeFiles/raytracer.dir/flags.make
-CMakeFiles/raytracer.dir/main.c.o: /Users/jacob/toy_projects/raytracer/main.c
-CMakeFiles/raytracer.dir/main.c.o: CMakeFiles/raytracer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jacob/toy_projects/raytracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/raytracer.dir/main.c.o"
-	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/raytracer.dir/main.c.o -MF CMakeFiles/raytracer.dir/main.c.o.d -o CMakeFiles/raytracer.dir/main.c.o -c /Users/jacob/toy_projects/raytracer/main.c
+CMakeFiles/raytracer.dir/src/main.c.o: CMakeFiles/raytracer.dir/flags.make
+CMakeFiles/raytracer.dir/src/main.c.o: /Users/jacob/toy_projects/raytracer/src/main.c
+CMakeFiles/raytracer.dir/src/main.c.o: CMakeFiles/raytracer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jacob/toy_projects/raytracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/raytracer.dir/src/main.c.o"
+	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/raytracer.dir/src/main.c.o -MF CMakeFiles/raytracer.dir/src/main.c.o.d -o CMakeFiles/raytracer.dir/src/main.c.o -c /Users/jacob/toy_projects/raytracer/src/main.c
 
-CMakeFiles/raytracer.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/raytracer.dir/main.c.i"
-	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jacob/toy_projects/raytracer/main.c > CMakeFiles/raytracer.dir/main.c.i
+CMakeFiles/raytracer.dir/src/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/raytracer.dir/src/main.c.i"
+	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jacob/toy_projects/raytracer/src/main.c > CMakeFiles/raytracer.dir/src/main.c.i
 
-CMakeFiles/raytracer.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/raytracer.dir/main.c.s"
-	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jacob/toy_projects/raytracer/main.c -o CMakeFiles/raytracer.dir/main.c.s
+CMakeFiles/raytracer.dir/src/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/raytracer.dir/src/main.c.s"
+	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jacob/toy_projects/raytracer/src/main.c -o CMakeFiles/raytracer.dir/src/main.c.s
 
-CMakeFiles/raytracer.dir/vec3.c.o: CMakeFiles/raytracer.dir/flags.make
-CMakeFiles/raytracer.dir/vec3.c.o: /Users/jacob/toy_projects/raytracer/vec3.c
-CMakeFiles/raytracer.dir/vec3.c.o: CMakeFiles/raytracer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jacob/toy_projects/raytracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/raytracer.dir/vec3.c.o"
-	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/raytracer.dir/vec3.c.o -MF CMakeFiles/raytracer.dir/vec3.c.o.d -o CMakeFiles/raytracer.dir/vec3.c.o -c /Users/jacob/toy_projects/raytracer/vec3.c
+CMakeFiles/raytracer.dir/src/vec3.c.o: CMakeFiles/raytracer.dir/flags.make
+CMakeFiles/raytracer.dir/src/vec3.c.o: /Users/jacob/toy_projects/raytracer/src/vec3.c
+CMakeFiles/raytracer.dir/src/vec3.c.o: CMakeFiles/raytracer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jacob/toy_projects/raytracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/raytracer.dir/src/vec3.c.o"
+	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/raytracer.dir/src/vec3.c.o -MF CMakeFiles/raytracer.dir/src/vec3.c.o.d -o CMakeFiles/raytracer.dir/src/vec3.c.o -c /Users/jacob/toy_projects/raytracer/src/vec3.c
 
-CMakeFiles/raytracer.dir/vec3.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/raytracer.dir/vec3.c.i"
-	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jacob/toy_projects/raytracer/vec3.c > CMakeFiles/raytracer.dir/vec3.c.i
+CMakeFiles/raytracer.dir/src/vec3.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/raytracer.dir/src/vec3.c.i"
+	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jacob/toy_projects/raytracer/src/vec3.c > CMakeFiles/raytracer.dir/src/vec3.c.i
 
-CMakeFiles/raytracer.dir/vec3.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/raytracer.dir/vec3.c.s"
-	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jacob/toy_projects/raytracer/vec3.c -o CMakeFiles/raytracer.dir/vec3.c.s
+CMakeFiles/raytracer.dir/src/vec3.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/raytracer.dir/src/vec3.c.s"
+	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jacob/toy_projects/raytracer/src/vec3.c -o CMakeFiles/raytracer.dir/src/vec3.c.s
 
-CMakeFiles/raytracer.dir/ray.c.o: CMakeFiles/raytracer.dir/flags.make
-CMakeFiles/raytracer.dir/ray.c.o: /Users/jacob/toy_projects/raytracer/ray.c
-CMakeFiles/raytracer.dir/ray.c.o: CMakeFiles/raytracer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jacob/toy_projects/raytracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/raytracer.dir/ray.c.o"
-	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/raytracer.dir/ray.c.o -MF CMakeFiles/raytracer.dir/ray.c.o.d -o CMakeFiles/raytracer.dir/ray.c.o -c /Users/jacob/toy_projects/raytracer/ray.c
+CMakeFiles/raytracer.dir/src/ray.c.o: CMakeFiles/raytracer.dir/flags.make
+CMakeFiles/raytracer.dir/src/ray.c.o: /Users/jacob/toy_projects/raytracer/src/ray.c
+CMakeFiles/raytracer.dir/src/ray.c.o: CMakeFiles/raytracer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jacob/toy_projects/raytracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/raytracer.dir/src/ray.c.o"
+	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/raytracer.dir/src/ray.c.o -MF CMakeFiles/raytracer.dir/src/ray.c.o.d -o CMakeFiles/raytracer.dir/src/ray.c.o -c /Users/jacob/toy_projects/raytracer/src/ray.c
 
-CMakeFiles/raytracer.dir/ray.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/raytracer.dir/ray.c.i"
-	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jacob/toy_projects/raytracer/ray.c > CMakeFiles/raytracer.dir/ray.c.i
+CMakeFiles/raytracer.dir/src/ray.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/raytracer.dir/src/ray.c.i"
+	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jacob/toy_projects/raytracer/src/ray.c > CMakeFiles/raytracer.dir/src/ray.c.i
 
-CMakeFiles/raytracer.dir/ray.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/raytracer.dir/ray.c.s"
-	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jacob/toy_projects/raytracer/ray.c -o CMakeFiles/raytracer.dir/ray.c.s
+CMakeFiles/raytracer.dir/src/ray.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/raytracer.dir/src/ray.c.s"
+	/Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jacob/toy_projects/raytracer/src/ray.c -o CMakeFiles/raytracer.dir/src/ray.c.s
 
 # Object files for target raytracer
 raytracer_OBJECTS = \
-"CMakeFiles/raytracer.dir/main.c.o" \
-"CMakeFiles/raytracer.dir/vec3.c.o" \
-"CMakeFiles/raytracer.dir/ray.c.o"
+"CMakeFiles/raytracer.dir/src/main.c.o" \
+"CMakeFiles/raytracer.dir/src/vec3.c.o" \
+"CMakeFiles/raytracer.dir/src/ray.c.o"
 
 # External object files for target raytracer
 raytracer_EXTERNAL_OBJECTS =
 
-raytracer: CMakeFiles/raytracer.dir/main.c.o
-raytracer: CMakeFiles/raytracer.dir/vec3.c.o
-raytracer: CMakeFiles/raytracer.dir/ray.c.o
+raytracer: CMakeFiles/raytracer.dir/src/main.c.o
+raytracer: CMakeFiles/raytracer.dir/src/vec3.c.o
+raytracer: CMakeFiles/raytracer.dir/src/ray.c.o
 raytracer: CMakeFiles/raytracer.dir/build.make
 raytracer: CMakeFiles/raytracer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/jacob/toy_projects/raytracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable raytracer"

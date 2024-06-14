@@ -25,7 +25,10 @@ double hit_sphere(sphere *s,  ray *r) {
 
 }
 color ray_color(ray *r) {
-    double t = hit_sphere(&(sphere) { {0,0,-1}, 0.5}, r);    
+    // Determine where on a sphere a ray may hit
+    double t = hit_sphere(&(sphere) { {0,0,-1}, 0.5}, r);
+
+    // If a ray hit the sphere
     if(t > 0.0) {
         loc3 ray_loc = ray_at(r, t);
         vec3 normal = vec_sub(&ray_loc, &(vec3) {0,0,-1});
@@ -35,8 +38,10 @@ color ray_color(ray *r) {
         double g = vec_y(&n);
         double b = vec_z(&n);
 
-        return vec_muld(&(color) {r+1, g+1, b+1}, 0.5);
+        return vec_muld(&(color) {r+1, g+1, b+1}, .5);
     }
+
+    // If a ray did not hit the sphere (draw background)
 
     vec3 unit_dir = vec_unit(&r->dir);
     

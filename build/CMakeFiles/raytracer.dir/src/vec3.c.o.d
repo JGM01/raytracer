@@ -1,5 +1,5 @@
-CMakeFiles/raytracer.dir/vec3.c.o: \
-  /Users/jacob/toy_projects/raytracer/vec3.c \
+CMakeFiles/raytracer.dir/src/vec3.c.o: \
+  /Users/jacob/toy_projects/raytracer/src/vec3.c \
   /Users/jacob/toy_projects/raytracer/include/vec3.h \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/stdio.h \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/_stdio.h \

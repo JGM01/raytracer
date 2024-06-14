@@ -38,5 +38,5 @@ CMakeFiles/raytracer.dir/main.c.o: \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/secure/_stdio.h \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/secure/_common.h \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdbool.h \
-  /Users/jacob/toy_projects/raytracer/vec3.h \
-  /Users/jacob/toy_projects/raytracer/ray.h
+  /Users/jacob/toy_projects/raytracer/include/vec3.h \
+  /Users/jacob/toy_projects/raytracer/include/ray.h

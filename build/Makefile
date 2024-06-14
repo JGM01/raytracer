@@ -129,77 +129,77 @@ raytracer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/build
 .PHONY : raytracer/fast
 
-main.o: main.c.o
-.PHONY : main.o
+src/main.o: src/main.c.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/main.c.o
-.PHONY : main.c.o
+src/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/main.c.o
+.PHONY : src/main.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+src/main.i: src/main.c.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/main.c.i
-.PHONY : main.c.i
+src/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/main.c.i
+.PHONY : src/main.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+src/main.s: src/main.c.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/main.c.s
-.PHONY : main.c.s
+src/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/main.c.s
+.PHONY : src/main.c.s
 
-ray.o: ray.c.o
-.PHONY : ray.o
+src/ray.o: src/ray.c.o
+.PHONY : src/ray.o
 
 # target to build an object file
-ray.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/ray.c.o
-.PHONY : ray.c.o
+src/ray.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/ray.c.o
+.PHONY : src/ray.c.o
 
-ray.i: ray.c.i
-.PHONY : ray.i
+src/ray.i: src/ray.c.i
+.PHONY : src/ray.i
 
 # target to preprocess a source file
-ray.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/ray.c.i
-.PHONY : ray.c.i
+src/ray.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/ray.c.i
+.PHONY : src/ray.c.i
 
-ray.s: ray.c.s
-.PHONY : ray.s
+src/ray.s: src/ray.c.s
+.PHONY : src/ray.s
 
 # target to generate assembly for a file
-ray.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/ray.c.s
-.PHONY : ray.c.s
+src/ray.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/ray.c.s
+.PHONY : src/ray.c.s
 
-vec3.o: vec3.c.o
-.PHONY : vec3.o
+src/vec3.o: src/vec3.c.o
+.PHONY : src/vec3.o
 
 # target to build an object file
-vec3.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/vec3.c.o
-.PHONY : vec3.c.o
+src/vec3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/vec3.c.o
+.PHONY : src/vec3.c.o
 
-vec3.i: vec3.c.i
-.PHONY : vec3.i
+src/vec3.i: src/vec3.c.i
+.PHONY : src/vec3.i
 
 # target to preprocess a source file
-vec3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/vec3.c.i
-.PHONY : vec3.c.i
+src/vec3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/vec3.c.i
+.PHONY : src/vec3.c.i
 
-vec3.s: vec3.c.s
-.PHONY : vec3.s
+src/vec3.s: src/vec3.c.s
+.PHONY : src/vec3.s
 
 # target to generate assembly for a file
-vec3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/vec3.c.s
-.PHONY : vec3.c.s
+src/vec3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/vec3.c.s
+.PHONY : src/vec3.c.s
 
 # Help Target
 help:
@@ -210,15 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... raytracer"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... ray.o"
-	@echo "... ray.i"
-	@echo "... ray.s"
-	@echo "... vec3.o"
-	@echo "... vec3.i"
-	@echo "... vec3.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/ray.o"
+	@echo "... src/ray.i"
+	@echo "... src/ray.s"
+	@echo "... src/vec3.o"
+	@echo "... src/vec3.i"
+	@echo "... src/vec3.s"
 .PHONY : help
 
 

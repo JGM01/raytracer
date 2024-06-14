@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/jacob/toy_projects/raytracer/main.c" "CMakeFiles/raytracer.dir/main.c.o" "gcc" "CMakeFiles/raytracer.dir/main.c.o.d"
-  "/Users/jacob/toy_projects/raytracer/ray.c" "CMakeFiles/raytracer.dir/ray.c.o" "gcc" "CMakeFiles/raytracer.dir/ray.c.o.d"
-  "/Users/jacob/toy_projects/raytracer/vec3.c" "CMakeFiles/raytracer.dir/vec3.c.o" "gcc" "CMakeFiles/raytracer.dir/vec3.c.o.d"
+  "/Users/jacob/toy_projects/raytracer/src/main.c" "CMakeFiles/raytracer.dir/src/main.c.o" "gcc" "CMakeFiles/raytracer.dir/src/main.c.o.d"
+  "/Users/jacob/toy_projects/raytracer/src/ray.c" "CMakeFiles/raytracer.dir/src/ray.c.o" "gcc" "CMakeFiles/raytracer.dir/src/ray.c.o.d"
+  "/Users/jacob/toy_projects/raytracer/src/vec3.c" "CMakeFiles/raytracer.dir/src/vec3.c.o" "gcc" "CMakeFiles/raytracer.dir/src/vec3.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

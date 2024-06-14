@@ -4,7 +4,7 @@
 # compile C with /Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = 
+C_INCLUDES = -I/Users/jacob/toy_projects/raytracer/include
 
 C_FLAGSarm64 =  -arch arm64 -isysroot /Applications/Xcode-15.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
 
