@@ -12,15 +12,15 @@ typedef struct sphere {
 
 double hit_sphere(sphere *s,  ray *r) {
     vec3 oc = vec_sub(&s->center, &r->orig);
-    double a = vec_dot(&r->dir, &r->dir);
-    double b = -2.0 * vec_dot(&r->dir, &oc);
-    double c = vec_dot(&oc, &oc) - (s->radius * s->radius);
-    double discriminant = b*b - 4*a*c;
+    double a = vec_len_squared(&r->dir);
+    double h = vec_dot(&r->dir, &oc);
+    double c = vec_len_squared(&oc) - (s->radius * s->radius);
+    double discriminant = h*h - a*c;
     
     if(discriminant < 0) {
         return -1.0;
     } else {
-        return (-b - sqrt(discriminant)) / (2.0*a);
+        return (h - sqrt(discriminant)) / a;
     }
 
 }
