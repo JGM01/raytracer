@@ -6,6 +6,6 @@ project(raytracer VERSION 1.0
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(raytracer src/main.c src/vec3.c src/ray.c)
+add_executable(raytracer src/main.c src/vec3.c src/ray.c src/geometry.c)
 
 target_include_directories(raytracer PRIVATE include)

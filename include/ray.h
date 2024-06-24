@@ -8,10 +8,10 @@ typedef struct {
     vec3 dir;
 } ray;
 
-loc3 ray_orig(ray *r);
-vec3 ray_dir(ray *r);
+loc3 ray_orig(const ray *r);
+vec3 ray_dir(const ray *r);
 
-loc3 ray_at(ray *r, double t);
+loc3 ray_at(const ray *r, const double t);
 
 #endif
 

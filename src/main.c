@@ -1,44 +1,18 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <math.h>
 
 #include "vec3.h"
 #include "ray.h"
+#include "geometry.h"
 
-typedef struct sphere {
-    loc3 center;
-    double radius;
-} sphere;
-
-double hit_sphere(sphere *s,  ray *r) {
-    vec3 oc = vec_sub(&s->center, &r->orig);
-    double a = vec_len_squared(&r->dir);
-    double h = vec_dot(&r->dir, &oc);
-    double c = vec_len_squared(&oc) - (s->radius * s->radius);
-    double discriminant = h*h - a*c;
-    
-    if(discriminant < 0) {
-        return -1.0;
-    } else {
-        return (h - sqrt(discriminant)) / a;
-    }
-
-}
-color ray_color(ray *r) {
+color ray_color(ray *r, const scene *s) {
     // Determine where on a sphere a ray may hit
-    double t = hit_sphere(&(sphere) { {0,0,-1}, 0.5}, r);
 
-    // If a ray hit the sphere
-    if(t > 0.0) {
-        loc3 ray_loc = ray_at(r, t);
-        vec3 normal = vec_sub(&ray_loc, &(vec3) {0,0,-1});
-        vec3 n = vec_unit(&normal);
-
-        double r = vec_x(&n);
-        double g = vec_y(&n);
-        double b = vec_z(&n);
-
-        return vec_muld(&(color) {r+1, g+1, b+1}, .5);
+    hit_record record;
+    if(hit_scene(s, r, 0, INFINITY, &record)) {
+        vec3 n = record.normal;
+        return vec_muld(&(color) {vec_x(&n)+1, vec_y(&n)+1, vec_z(&n)+1}, 0.5);
     }
 
     // If a ray did not hit the sphere (draw background)
@@ -91,8 +65,14 @@ int main() {
 
     loc3 pixel00_loc = vec_add(&viewport_upper_left, &mult_deltas);
 
-    printf("P3\n%d %d\n255\n", image_width, image_height);
+    scene s;
+    init_scene(&s);
+    append_sphere(&s, (loc3) {0, 0, -1}, 0.5);
+    append_sphere(&s, (loc3) {.5, 0, -1}, 0.4);
+    append_sphere(&s, (loc3) {-.5, 0, -1}, 0.25);
 
+    printf("P3\n%d %d\n255\n", image_width, image_height);
+    
     for(int j = 0; j < image_height; j++) {
         for(int i = 0; i < image_width; i++) {
             vec3 u = vec_muld(&pixel_delta_u, i);
@@ -103,7 +83,7 @@ int main() {
             vec3 ray_direction = vec_sub(&pixel_center,&camera_loc);
 
             ray r = {camera_loc, ray_direction};
-            color pixel_color = ray_color(&r);
+            color pixel_color = ray_color(&r, &s);
             color_print(&pixel_color);
         }
     }

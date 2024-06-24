@@ -129,6 +129,30 @@ raytracer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/build
 .PHONY : raytracer/fast
 
+src/geometry.o: src/geometry.c.o
+.PHONY : src/geometry.o
+
+# target to build an object file
+src/geometry.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/geometry.c.o
+.PHONY : src/geometry.c.o
+
+src/geometry.i: src/geometry.c.i
+.PHONY : src/geometry.i
+
+# target to preprocess a source file
+src/geometry.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/geometry.c.i
+.PHONY : src/geometry.c.i
+
+src/geometry.s: src/geometry.c.s
+.PHONY : src/geometry.s
+
+# target to generate assembly for a file
+src/geometry.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/geometry.c.s
+.PHONY : src/geometry.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... raytracer"
+	@echo "... src/geometry.o"
+	@echo "... src/geometry.i"
+	@echo "... src/geometry.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
