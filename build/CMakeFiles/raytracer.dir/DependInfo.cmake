@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/jacob/toy_projects/raytracer/src/camera.c" "CMakeFiles/raytracer.dir/src/camera.c.o" "gcc" "CMakeFiles/raytracer.dir/src/camera.c.o.d"
   "/Users/jacob/toy_projects/raytracer/src/geometry.c" "CMakeFiles/raytracer.dir/src/geometry.c.o" "gcc" "CMakeFiles/raytracer.dir/src/geometry.c.o.d"
   "/Users/jacob/toy_projects/raytracer/src/main.c" "CMakeFiles/raytracer.dir/src/main.c.o" "gcc" "CMakeFiles/raytracer.dir/src/main.c.o.d"
   "/Users/jacob/toy_projects/raytracer/src/ray.c" "CMakeFiles/raytracer.dir/src/ray.c.o" "gcc" "CMakeFiles/raytracer.dir/src/ray.c.o.d"

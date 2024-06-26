@@ -39,4 +39,5 @@ CMakeFiles/raytracer.dir/src/main.c.o: \
   /Applications/Xcode-15.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdbool.h \
   /Users/jacob/toy_projects/raytracer/include/vec3.h \
   /Users/jacob/toy_projects/raytracer/include/ray.h \
-  /Users/jacob/toy_projects/raytracer/include/geometry.h
+  /Users/jacob/toy_projects/raytracer/include/geometry.h \
+  /Users/jacob/toy_projects/raytracer/include/camera.h
