@@ -1,32 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <math.h>
 
 #include "vec3.h"
 #include "ray.h"
 #include "geometry.h"
-
-color ray_color(ray *r, const scene *s) {
-    // Determine where on a sphere a ray may hit
-
-    hit_record record;
-    if(hit_scene(s, r, 0, INFINITY, &record)) {
-        vec3 n = record.normal;
-        return vec_muld(&(color) {vec_x(&n)+1, vec_y(&n)+1, vec_z(&n)+1}, 0.5);
-    }
-
-    // If a ray did not hit the sphere (draw background)
-
-    vec3 unit_dir = vec_unit(&r->dir);
-    
-    double a = 0.5 * (vec_y(&unit_dir) + 1);
-    
-    color c1 = vec_muld(& (color){1.0, 1.0, 1.0}, (1.0-a));
-    color c2 = vec_muld(& (color){0.5, 0.7, 1.0}, a);
-
-    return vec_add(&c1, &c2);
-}
-
 
 int main() {
 
@@ -83,7 +60,7 @@ int main() {
             vec3 ray_direction = vec_sub(&pixel_center,&camera_loc);
 
             ray r = {camera_loc, ray_direction};
-            color pixel_color = ray_color(&r, &s);
+            color pixel_color = ray_getColor(&r, &s);
             color_print(&pixel_color);
         }
     }

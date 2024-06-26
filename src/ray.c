@@ -12,3 +12,5 @@ loc3 ray_at(const ray *r, const double t) {
     vec3 tmp = vec_muld(&r->dir, t);
     return vec_add(&r->orig, &tmp);
 }
+
+

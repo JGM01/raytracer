@@ -3,6 +3,28 @@
 #include "vec3.h"
 #include <math.h>
 
+
+color ray_getColor(ray *r, const scene *s) {
+    // Determine where on a sphere a ray may hit
+
+    hit_record record;
+    if(hit_scene(s, r, 0, INFINITY, &record)) {
+        vec3 n = record.normal;
+        return vec_muld(&(color) {vec_x(&n)+1, vec_y(&n)+1, vec_z(&n)+1}, 0.5);
+    }
+
+    // If a ray did not hit the sphere (draw background)
+
+    vec3 unit_dir = vec_unit(&r->dir);
+    
+    double a = 0.5 * (vec_y(&unit_dir) + 1);
+    
+    color c1 = vec_muld(& (color){1.0, 1.0, 1.0}, (1.0-a));
+    color c2 = vec_muld(& (color){0.5, 0.7, 1.0}, a);
+
+    return vec_add(&c1, &c2);
+}
+
 void init_scene(scene *s) {
     s->surface_count = 0;
 }

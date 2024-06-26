@@ -51,4 +51,6 @@ int append_sphere(scene *s, loc3 center, double radius);
 bool hit_sphere(const surface *s, const ray *r, double t_min, double t_max, hit_record *record);
 bool hit_scene(const scene *s, const ray *r, double t_min, double t_max, hit_record *record);
 
+color ray_getColor(ray *r, const scene *s);
+
 #endif

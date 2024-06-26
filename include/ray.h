@@ -8,6 +8,7 @@ typedef struct {
     vec3 dir;
 } ray;
 
+
 loc3 ray_orig(const ray *r);
 vec3 ray_dir(const ray *r);
 
