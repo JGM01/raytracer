@@ -8,7 +8,7 @@ Produce an image by following the instructions:
 
 Build the project
 
-Go into the `build/` directory, and run the `make` command.
+Go into the `build/` directory, and run `cmake -S . -B build`.
 
 Render the image
 
