@@ -6,9 +6,11 @@ In an attempt to become more familiar with the math involved in ray tracing, I a
 
 Produce an image by following the instructions:
 
-Build the project
+First build:
 
-Go into the `build/` directory, and run `cmake -S . -B build`.
+While in the root directory, run `cmake -S . -B build`.
+
+Every consecutive build afterwards will be in the `build/` directory using the `make` command.
 
 Render the image
 
