@@ -1,4 +1,5 @@
 #include "geometry.h"
+#include "interval.h"
 #include "ray.h"
 #include "vec3.h"
 #include <math.h>
@@ -8,7 +9,7 @@ color ray_getColor(ray *r, const scene *s) {
     // Determine where on a sphere a ray may hit
 
     hit_record record;
-    if(hit_scene(s, r, 0, INFINITY, &record)) {
+    if(hit_scene(s, r, (interval) {0, INFINITY}, &record)) {
         vec3 n = record.normal;
         return vec_muld(&(color) {vec_x(&n)+1, vec_y(&n)+1, vec_z(&n)+1}, 0.5);
     }
@@ -50,7 +51,7 @@ int append_sphere(scene *s, loc3 center, double radius) {
     return s->surface_count-1;
 }
 
-bool hit_sphere(const surface *s, const ray *r, double t_min, double t_max, hit_record *record) {
+bool hit_sphere(const surface *s, const ray *r, interval ray_t, hit_record *record) {
     vec3 oc = vec_sub(&r->orig, &s->data.sphere.center);
     double a = vec_len_squared(&r->dir);
     double half_b = vec_dot(&oc, &r->dir);
@@ -64,9 +65,9 @@ bool hit_sphere(const surface *s, const ray *r, double t_min, double t_max, hit_
     double sqrtd = sqrt(discriminant);
 
     double root = (-half_b - sqrtd) / a;
-    if(root < t_min || t_max < root) {
+    if(!interval_surrounds(&ray_t, root)) {
         root = (-half_b + sqrtd) / a;
-        if(root < t_min || t_max < root) {
+        if(!interval_surrounds(&ray_t, root)) {
             return false;
         }
     }
@@ -80,16 +81,16 @@ bool hit_sphere(const surface *s, const ray *r, double t_min, double t_max, hit_
     return true;
 }
 
-bool hit_scene(const scene *s, const ray *r, double t_min, double t_max, hit_record *record) {
+bool hit_scene(const scene *s, const ray *r, interval ray_t, hit_record *record) {
     hit_record tmp_record;
     bool didHitSurface = false;
-    double closest = t_max;
+    double closest = ray_t.max;
 
     for (int i = 0; i < s->surface_count; i++) {
         const surface *current_surface = &s->surfaces[i];
         switch (current_surface->type) {
             case SURFACE_SPHERE:
-                if (hit_sphere(current_surface, r, t_min, t_max, &tmp_record)) {
+                if (hit_sphere(current_surface, r, ray_t, &tmp_record)) {
                     didHitSurface = true;
                     closest = tmp_record.t;
                     *record = tmp_record;

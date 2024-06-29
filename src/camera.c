@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "camera.h"
 #include "ray.h"
 #include "vec3.h"
@@ -43,4 +45,16 @@ ray camera_getRay(const camera *c, int i, int j) {
     vec3 ray_direction = vec_sub(&pixel_center, &c->position);
 
     return (ray) {c->position, ray_direction};
+}
+
+void camera_render(const camera *c, const scene *s) {
+    printf("P3\n%d %d\n255\n", c->width, c->height);
+    
+    for(int j = 0; j < c->height; j++) {
+        for(int i = 0; i < c->width; i++) {
+            ray r = camera_getRay(c, i, j);
+            color pixel_color = ray_getColor(&r, s);
+            color_print(&pixel_color);
+        }
+    }
 }
