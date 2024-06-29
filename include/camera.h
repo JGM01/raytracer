@@ -9,6 +9,9 @@ typedef struct {
     int width;
     int height;
 
+    int samples_per_pixel;
+    double pixel_samples_scale;
+
     loc3 position;
     loc3 pixel00_position;
 

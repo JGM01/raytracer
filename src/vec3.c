@@ -1,4 +1,5 @@
 #include "vec3.h"
+#include "interval.h"
 
 #include <stdio.h>
 #include <math.h>
@@ -94,9 +95,12 @@ void color_print(const vec3 *v) {
     double g = vec_y(v);
     double b = vec_z(v);
 
-    int rbyte = (int) (255.999 * r);
-    int gbyte = (int) (255.999 * g);
-    int bbyte = (int) (255.999 * b);
+    interval intensity;
+    intensity = (interval) {0.000, 0.999};
+
+    int rbyte = (int) (256.0 * interval_clamp(&intensity, r));
+    int gbyte = (int) (256.0 * interval_clamp(&intensity, g));
+    int bbyte = (int) (256.0 * interval_clamp(&intensity, b));
 
     printf("%d %d %d\n", rbyte, gbyte, bbyte);
 }

@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "camera.h"
+#include "geometry.h"
 #include "ray.h"
+#include "utilities.h"
 #include "vec3.h"
 
 void init_camera(camera *c, double ratio, int width) {
@@ -12,6 +15,9 @@ void init_camera(camera *c, double ratio, int width) {
     if(c->height < 1) {
         c->height = 1;
     }
+    
+    c->samples_per_pixel = 100;
+    c->pixel_samples_scale = 1.0/c->samples_per_pixel;
 
     double focal_length = 1.0;
     double viewport_height = 2.0;
@@ -36,24 +42,43 @@ void init_camera(camera *c, double ratio, int width) {
     c->pixel00_position = vec_add(&viewport_upper_left, &pixel_delta_half);
 }
 
-ray camera_getRay(const camera *c, int i, int j) {
-    vec3 u = vec_muld(&c->pixel_delta_u, i);
-    vec3 v = vec_muld(&c->pixel_delta_v, j);
-    vec3 uv = vec_add(&u, &v);
-
-    loc3 pixel_center = vec_add(&c->pixel00_position, &uv);
-    vec3 ray_direction = vec_sub(&pixel_center, &c->position);
-
-    return (ray) {c->position, ray_direction};
+vec3 sample_square() {
+    return (vec3) {(rand()/(RAND_MAX + 1.0)) - 0.5, (rand()/(RAND_MAX + 1.0)) - 0.5, 0};
 }
+
+ray camera_getRay(const camera *c, int i, int j) {
+    vec3 offset = sample_square();
+
+    vec3 a = vec_muld(&c->pixel_delta_u, i + vec_x(&offset)); 
+    vec3 b = vec_muld(&c->pixel_delta_v, j + vec_y(&offset));
+
+    vec3 tmp = vec_add(&a, &b);
+    vec3 pixel_sample = vec_add(&tmp, &c->pixel00_position);
+
+    loc3 ray_origin = c->position;
+    vec3 ray_direction = vec_sub(&pixel_sample, &ray_origin);
+    
+
+    return (ray) {ray_origin, ray_direction};
+}
+
+
 
 void camera_render(const camera *c, const scene *s) {
     printf("P3\n%d %d\n255\n", c->width, c->height);
     
     for(int j = 0; j < c->height; j++) {
         for(int i = 0; i < c->width; i++) {
-            ray r = camera_getRay(c, i, j);
-            color pixel_color = ray_getColor(&r, s);
+            //ray r = camera_getRay(c, i, j);
+            color pixel_color = (color) {0,0,0};
+            
+            for (int sample = 0; sample < c->samples_per_pixel; sample++) {
+                ray r = camera_getRay(c, i, j);
+                color tmp_color = ray_getColor(&r, s);
+                pixel_color = vec_add(&pixel_color, &tmp_color);
+            }
+
+            pixel_color = vec_muld(&pixel_color, c->pixel_samples_scale);
             color_print(&pixel_color);
         }
     }

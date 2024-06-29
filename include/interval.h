@@ -15,4 +15,5 @@ bool interval_contains(interval *i, double x);
 
 bool interval_surrounds(interval *i, double x);
 
+double interval_clamp(interval *i, double x);
 #endif
