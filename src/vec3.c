@@ -122,10 +122,22 @@ vec3 vec_randomSurfaceNormalOnHemisphere(const vec3 *normal) {
 
 // COLOR UTILS
 
+double ltog(double linearValue) {
+    if(linearValue > 0) {
+        return sqrt(linearValue);
+    }
+
+    return 0;
+}
+
 void color_print(const vec3 *v) {
     double r = vec_x(v);
     double g = vec_y(v);
     double b = vec_z(v);
+
+    r = ltog(r);
+    g = ltog(g);
+    b = ltog(b);
 
     interval intensity;
     intensity = (interval) {0.000, 0.999};
