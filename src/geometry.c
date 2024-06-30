@@ -5,7 +5,12 @@
 #include <math.h>
 
 
-color ray_getColor(ray *r, const scene *s) {
+color ray_getColor(ray *r, const scene *s, int depth) {
+
+    if(depth <= 0) {
+        return (color) {0, 0, 0};
+    }
+
     // Determine where on a sphere a ray may hit
 
     hit_record record;
@@ -13,7 +18,7 @@ color ray_getColor(ray *r, const scene *s) {
         vec3 direction = vec_randomSurfaceNormalOnHemisphere(&record.normal);
 
         ray tmpRay = (ray) {record.p, direction};
-        color tmpColor = ray_getColor(&tmpRay, s);
+        color tmpColor = ray_getColor(&tmpRay, s, depth-1);
         return vec_muld(&tmpColor, 0.5);
     }
 

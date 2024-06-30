@@ -11,6 +11,7 @@ void init_camera(camera *c, double ratio, int width) {
     c->ratio = ratio;
     c->width = width;
     c->height = (int) (width / ratio);
+    c->max_depth = 10;
 
     if(c->height < 1) {
         c->height = 1;
@@ -74,7 +75,8 @@ void camera_render(const camera *c, const scene *s) {
             
             for (int sample = 0; sample < c->samples_per_pixel; sample++) {
                 ray r = camera_getRay(c, i, j);
-                color tmp_color = ray_getColor(&r, s);
+                color tmp_color = ray_getColor(&r, s, c->max_depth);
+
                 pixel_color = vec_add(&pixel_color, &tmp_color);
             }
 

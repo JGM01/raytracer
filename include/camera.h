@@ -11,6 +11,8 @@ typedef struct {
 
     int samples_per_pixel;
     double pixel_samples_scale;
+    
+    int max_depth;
 
     loc3 position;
     loc3 pixel00_position;
