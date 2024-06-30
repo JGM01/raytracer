@@ -10,8 +10,11 @@ color ray_getColor(ray *r, const scene *s) {
 
     hit_record record;
     if(hit_scene(s, r, (interval) {0, INFINITY}, &record)) {
-        vec3 n = record.normal;
-        return vec_muld(&(color) {vec_x(&n)+1, vec_y(&n)+1, vec_z(&n)+1}, 0.5);
+        vec3 direction = vec_randomSurfaceNormalOnHemisphere(&record.normal);
+
+        ray tmpRay = (ray) {record.p, direction};
+        color tmpColor = ray_getColor(&tmpRay, s);
+        return vec_muld(&tmpColor, 0.5);
     }
 
     // If a ray did not hit the sphere (draw background)

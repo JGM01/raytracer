@@ -30,6 +30,13 @@ double vec_len(const vec3 *v);
 
 double vec_len_squared(const vec3 *v);
 
+vec3 vec_randomRange(double min, double max);
+vec3 vec_random();
+
+vec3 vec_randomInUnitSphere();
+vec3 vec_randomUnitVector();
+vec3 vec_randomSurfaceNormalOnHemisphere(const vec3 *normal);
+
 void color_print(const vec3 *v);
 
 #endif

@@ -1,5 +1,6 @@
 #include "vec3.h"
 #include "interval.h"
+#include "utilities.h"
 
 #include <stdio.h>
 #include <math.h>
@@ -86,6 +87,37 @@ vec3 vec_cross(const vec3 *lhs, const vec3 *rhs) {
 
 vec3 vec_unit(const vec3 *v) {
     return vec_div(v, vec_len(v));
+}
+
+vec3 vec_randomRange(double min, double max) {
+    return (vec3) {random_double(min, max), random_double(min, max), random_double(min, max)};
+}
+
+vec3 vec_random() {
+    return (vec3) {random_double(0, 1), random_double(0, 1), random_double(0, 1)};
+}
+
+vec3 vec_randomInUnitSphere() {
+    while(true) {
+        vec3 p = vec_randomRange(-1, 1);
+        if(vec_len_squared(&p) < 1) {
+            return p;
+        }
+    }
+}
+
+vec3 vec_randomUnitVector() {
+    vec3 randomVecInUnitSphere= vec_randomInUnitSphere();
+    return vec_unit(&randomVecInUnitSphere);
+}
+
+vec3 vec_randomSurfaceNormalOnHemisphere(const vec3 *normal) {
+    vec3 onUnitSphere = vec_randomUnitVector();
+    if(vec_dot(&onUnitSphere, normal) > 0.0) {
+        return onUnitSphere;
+    } else {
+        return vec_negate(&onUnitSphere);
+    }
 }
 
 // COLOR UTILS
