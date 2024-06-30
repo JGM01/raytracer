@@ -14,7 +14,7 @@ color ray_getColor(ray *r, const scene *s, int depth) {
     // Determine where on a sphere a ray may hit
 
     hit_record record;
-    if(hit_scene(s, r, (interval) {0, INFINITY}, &record)) {
+    if(hit_scene(s, r, (interval) {0.001, INFINITY}, &record)) {
         vec3 direction = vec_randomSurfaceNormalOnHemisphere(&record.normal);
 
         ray tmpRay = (ray) {record.p, direction};
