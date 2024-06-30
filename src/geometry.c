@@ -15,7 +15,9 @@ color ray_getColor(ray *r, const scene *s, int depth) {
 
     hit_record record;
     if(hit_scene(s, r, (interval) {0.001, INFINITY}, &record)) {
-        vec3 direction = vec_randomSurfaceNormalOnHemisphere(&record.normal);
+        vec3 randomSurfaceNormalOnHemisphere = vec_randomSurfaceNormalOnHemisphere(&record.normal);
+
+        vec3 direction = vec_add(&record.normal, &randomSurfaceNormalOnHemisphere);
 
         ray tmpRay = (ray) {record.p, direction};
         color tmpColor = ray_getColor(&tmpRay, s, depth-1);
